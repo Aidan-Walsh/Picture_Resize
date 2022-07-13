@@ -301,32 +301,37 @@ public class SeamCarver {
     // test for energy and use random picture
     public static void main(String[] args) {
 
+        Picture pic = new Picture(args[0]);
+        int width = Integer.parseInt(args[1]);
+        int height = Integer.parseInt(args[2]);
 
-        int width = Integer.parseInt(args[0]);
-        int height = Integer.parseInt(args[1]);
 
-
-        SeamCarver sc = new SeamCarver(SCUtility.randomPicture(width, height));
+        SeamCarver sc = new SeamCarver(pic);
         StdOut.printf("%d-by-%d image\n", sc.picture().width(), sc.picture().height());
+
+        // begin stopwatch for timing
         Stopwatch sw = new Stopwatch();
 
+        // remove vertical seams, thus reducing width
+        for (int i = 0; i < width; i++) {
+            int[] verticalSeam = sc.findVerticalSeam();
+            sc.removeVerticalSeam(verticalSeam);
+        }
 
-        int[] horizontalSeam = sc.findHorizontalSeam();
-        sc.removeHorizontalSeam(horizontalSeam);
-
-
-        int[] verticalSeam = sc.findVerticalSeam();
-        sc.removeVerticalSeam(verticalSeam);
+        // remove horizontal seams, thus reducing height
+        for (int i = 0; i < height; i++) {
+            int[] horizontalSeam = sc.findHorizontalSeam();
+            sc.removeHorizontalSeam(horizontalSeam);
+        }
 
 
         StdOut.printf("new image size is %d columns by %d rows\n", sc.width(),
                       sc.height());
 
         StdOut.println("Resizing time: " + sw.elapsedTime() + " seconds.");
-        
+
         sc.picture().show();
-        StdOut.println("Energy at bottom right pixel: " +
-                               sc.energy(sc.width() - 1, sc.height() - 1));
+                
     }
 
 
