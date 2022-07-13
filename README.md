@@ -1,6 +1,5 @@
 # Picture_Resize
-Seam Carver algorithm (content aware image resizing) that trims an image by a specified amount. It takes an image file as standard input, as well as 
-width and height that the image is to be reduced by
+Seam Carver algorithm (content aware image resizing) that trims an image by a specified amount. It takes an image file name from the command line, as well as the width and height that the image is to be reduced by and outputs the trimmed image. It also outputs the size of the original image, the size of the new image, and the total time to resize the image. 
 
 # Before Use
 Please note that this code uses Princeton University's library of methods (seen imported at the top of the files). 
@@ -15,4 +14,4 @@ using "javac-algs4" and "java-algs4". Please use "javac" and "java" instead if t
 and "200" specifies the height that the picture will be reduced by (in pixels). 
     - "java-algs4 SeamCarver picture.png 100 200"
     
-A new, resized picture should appear on your computer!
+A new, resized picture should appear on your computer, as well as the dimensions of the old and new image, and the total resizing time!
