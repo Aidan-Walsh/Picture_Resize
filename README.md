@@ -1,5 +1,5 @@
 # Picture_Resize
-Seam Carver algorithm (content aware image resizing) that trims an image by a specified amount. It takes an image file name from the command line, as well as the width and height that the image is to be reduced by and outputs the trimmed image. It also outputs the size of the original image, the size of the new image, and the total time to resize the image. 
+Seam Carver algorithm (content aware image resizing) that trims an image by a specified amount. Using special algorithms, it looks for the least important seams of an image and removes them. It takes an image file name from the command line, as well as the width and height that the image is to be reduced by and outputs the trimmed image. It also outputs the size of the original image, the size of the new image, and the total time to resize the image. 
 
 # Before Use
 Please note that this code uses a library of methods (seen imported at the top of the files). 
